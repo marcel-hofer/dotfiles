@@ -5,7 +5,7 @@
 export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/okaufmann/.oh-my-zsh
+export ZSH=/Users/hoferm/.oh-my-zsh
 
 # Setup xdebug
 export XDEBUG_CONFIG="idekey=VSCODE"
@@ -15,7 +15,7 @@ export XDEBUG_CONFIG="idekey=VSCODE"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="remy"
 ZSH_THEME="cobalt2"
-DEFAULT_USER="okaufmann"
+DEFAULT_USER="hoferm"
 
 # CONFIG SPACESHIP
 # based on https://gist.github.com/PierreThiollent/9087a26d56e0704c263baf7e1a5f3827

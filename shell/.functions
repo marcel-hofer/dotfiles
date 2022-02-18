@@ -21,7 +21,7 @@ function whatgit() {
     cd ~/Code && git standup -s -d "$days" -D local -m 3
 }
 
-function wholisten() { 
+function wholisten() {
     lsof -nP -i4TCP:$1 | grep LISTEN
 }
 
@@ -407,14 +407,10 @@ function email-guess() {
 
     remote=`git remote -v | awk '/\(push\)$/ {print $2}'`
     echo -e "${GREEN}Guessing email based on git repo $remote${NOCOLOR}"
-    email=okaufmann91@gmail.com # default
+    email=the.hoferm@gmail.com # default
 
     if [[ $remote == *github.com:teamnovu* ]]; then
-        email=oliver.kaufmann@novu.ch
-    fi
-
-    if [[ $remote == *projects.lernetz.ch* ]]; then
-        email=oliver.kaufmann@novu.ch
+        email=marcel.hofer@novu.ch
     fi
 
     echo -e "${GREEN}Configuring user.email as $email${NOCOLOR}"
@@ -443,7 +439,7 @@ function reloadQuickLook() {
     # xattr -d -r com.apple.quarantine ~/Library/QuickLook
     qlmanage -r
     qlmanage -r cache
-    
+
     for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
         "Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
         "Terminal" "Transmission" "Twitter" "iCal"; do

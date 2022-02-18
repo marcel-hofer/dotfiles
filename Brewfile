@@ -70,7 +70,7 @@ cask 'font-source-serif-pro'
  # Apps
 cask "keepingyouawake"
 cask "phpmon"
-cask 'discord'
+# cask 'discord'
 cask 'docker'
 cask 'insomnia'
 cask 'ray'
@@ -99,4 +99,4 @@ cask "qlimagesize"
 # mas 'Spark', id: 1176895641
 # mas 'Speedtest', id: 1153157709
 # mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+# mas 'Tweetbot', id: 1384080005

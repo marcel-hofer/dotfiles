@@ -2,34 +2,30 @@
     default = simple
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [pull]
-	ff = only
+    ff = only
 
 [fetch]
-	prune = true
+    prune = true
 
 [alias]
-    # inspired by https://laravel-news.com/bash-aliases
+    ; st = status -bs
     st = "!f(){ git status -bs; printf \"\nIgnored files:\n\"; git ls-files -v | grep "^h " | cut -c 3-; };f"
+    lg = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
+    ll = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short -10
+
+    commita = "!f(){ git add .; git commit \"$@\"; };f"
+    merge-prepare = "!f(){ git merge --no-commit --no-ff \"$1\"; };f"
+    branch-kill = "!f(){ git merge --no-commit --no-ff \"$1\";  git push origin --delete \"$1\"; };f"
+    exp = "!f(){ git clone --shared --no-checkout . \"$2\"; cd \"$2\"; git checkout \"$1\"; rm -rf .git; };f"
+    fetch-branches = remote update origin --prune
+    dracarys = "!f(){ git reset --hard; git clean -df; };f"
+    groot = "!f(){ git branch --merged | grep -v 'master' | grep -v 'develop' | grep -v '*' | xargs git branch -d; };f"
+
     assume = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
     assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
-    ; st = status -bs
-    ci = commit
-    co = checkout
-    di = diff
-    dc = diff --cached
-    sg = diff --staged --name-only
-    b = branch
-    fa = fetch --all
-    lg = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
-    ll = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short -10
-    amend = commit --amend
-    dracarys = "!f() { git reset --hard && git clean -df; }; f"
-    au = add -u
-    ap = add -p
-    cara = “!git commit --amend --reset-author”
