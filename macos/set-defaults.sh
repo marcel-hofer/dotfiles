@@ -946,7 +946,6 @@ for app in "Activity Monitor" \
     "Google Chrome" \
     "Mail" \
     "Messages" \
-    # "Opera" \
     "Photos" \
     "Safari" \
     "SizeUp" \
@@ -954,8 +953,6 @@ for app in "Activity Monitor" \
     "SystemUIServer" \
     "Terminal" \
     "Transmission" \
-    # "Tweetbot" \
-    # "Twitter" \
     "iCal"; do
     killall "${app}" &> /dev/null
 done
