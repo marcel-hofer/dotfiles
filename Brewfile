@@ -56,6 +56,7 @@ brew 'nginx'
 # brew 'node'
 brew 'redis', restart_service: true
 brew 'yarn'
+brew 'mailhog'
 
 # Fonts
 cask "font-fira-code"
@@ -80,6 +81,7 @@ cask 'zoom'
 cask 'helo'
 cask 'telegram-desktop'
 cask 'tinkerwell'
+cask 'sequel-ace'
 
 # Quicklook
 cask "syntax-highlight"
